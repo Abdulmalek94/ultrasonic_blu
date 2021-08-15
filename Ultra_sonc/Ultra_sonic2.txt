@@ -1,0 +1,27 @@
+char led1[5];
+const int led = 13;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(led, OUTPUT);
+    char mode = Serial.readBytes(led1,5); 
+  Serial.println(mode); 
+  if (mode == 5){
+    digitalWrite(led, HIGH);
+    delay(500);
+  }
+}
+
+void loop() {
+  char mode = Serial.readBytes(led1,5); 
+  Serial.println(mode); 
+  if (mode == 5){
+    digitalWrite(led, HIGH);
+    delay(500);
+  }
+  else {
+    digitalWrite(led, LOW);
+    delay(500);
+  }
+delay(100);
+}
